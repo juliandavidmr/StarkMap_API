@@ -28,7 +28,7 @@ block content
                 td.mdl-data-table__cell--non-numeric {{r.nombrerecurso}}
                 td.mdl-data-table__cell--non-numeric {{r.descripcion}}
                 td.mdl-data-table__cell--non-numeric {{r.numpiso}}
-                td.mdl-data-table__cell--non-numeric {{r.numbloque}}
+                td.mdl-data-table__cell--non-numeric {{r.numbloque == 0? "No aplica": r.numbloque}}
                 td.mdl-data-table__cell--non-numeric {{r.tiporecurso}}
                 td.mdl-data-table__cell--numeric {{r.posicion.x}}
                 td.mdl-data-table__cell--numeric {{r.posicion.y}}

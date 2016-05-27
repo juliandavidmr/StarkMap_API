@@ -2,6 +2,12 @@ doctype html
 html
   head
     title= title
+    meta(name="application-name" content="StarkMap: Plataforma de busqueda de recursos fisicos de la universidad de la amazonia")
+    meta(name="author" content="@anlijudavid")
+    meta(name="description" content="Asistente en la busqueda de recursos fisicos y academicos de la universidad de la amazonia")
+    meta(name="generator" content="AngularJS")
+    meta(name="keywords" content="analítica web, seo, educacion, web, recursos fisicos, analytics, asistente, assistant, universidad, universidad de la amazonia, amazonia")
+    
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(rel='stylesheet' href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
@@ -10,7 +16,9 @@ html
     //link(rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.teal-indigo.min.css")    
     script(defer src="https://code.getmdl.io/1.1.3/material.min.js")
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js")
-    
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+    link(rel="icon" type="image/png" sizes="16x16" href="/images/pin.png")
+        
     style.
       #map {
         width: 100%;
@@ -44,7 +52,7 @@ html
             a.mdl-navigation__link(href='/sedes_form') Sedes
             a.mdl-navigation__link(href='/bloques/form') Bloques
             a.mdl-navigation__link(href='/tipos_recursos_fisicos_form') Tipos de recurso
-            a.mdl-navigation__link(href='#') Puntos de interes
+            a.mdl-navigation__link(href='/pinteres') Puntos de interes
       .mdl-layout__drawer
         span.mdl-layout-title StarkMap
         nav.mdl-navigation
@@ -53,11 +61,13 @@ html
           a.mdl-navigation__link(href='/bloques/form') Bloques
           a.mdl-navigation__link(href='/sedes_form') Sedes
           a.mdl-navigation__link(href='/tipos_recursos_fisicos_form') Tipos de recurso
-          a.mdl-navigation__link(href='#') Puntos de interes
+          a.mdl-navigation__link(href='/pinteres') Puntos de interes
       main.mdl-layout__content
         .page-content
           // Your content goes here
           block content
+          br
+          br
       
-    script.
-       $(".button-collapse").sideNav();
+      script.
+         $(".button-collapse").sideNav();

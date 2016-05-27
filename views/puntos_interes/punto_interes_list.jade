@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  div(ng-app="App")
+    div(ng-cloak)
+      br
+      center
+        form(action="#")
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" id="sample3" ng-model="search")
+            label(class="mdl-textfield__label" for="sample3") Buscar...
+                    
+        // Wide card with share menu button
+        style.
+          .demo-card-wide.mdl-card {
+            width: 512px;
+          }
+          .demo-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 176px;
+            background: url('/images/puntos-interes-Londres.jpg') center / cover;
+          }
+          .demo-card-wide > .mdl-card__menu {
+            color: #fff;
+          }
+        .demo-card-wide.mdl-card.mdl-shadow--2dp
+          .mdl-card__title
+            h2.mdl-card__title-text Hola!
+          .mdl-card__supporting-text
+            | Pagina en desarrollo, mientras tanto puede observar los cambios que se estan realizando.
+          .mdl-card__actions.mdl-card--border
+            a(class="mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect" href="https://github.com/juliandavidmr/StarkMap_API") Empezar
+          .mdl-card__menu
+            button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
+              i.material-icons share
+        
+        
+  script(src='/javascripts/controllers.js')

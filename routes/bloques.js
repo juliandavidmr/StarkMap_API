@@ -9,7 +9,7 @@ router.get('/json/:limite_or_id', function(req, res, next) {
 	console.log(req.params.limite_or_id);
 
 	var limite = req.params.limite_or_id;
-	if(limite == 'list' || limite <= 0) {
+	if(limite == 'list' || limite <= 0 || !Number.isInteger(Number.parseInt(limite))) {
 		limite = 'LIMIT 10000';
 	} else {
 		limite = 'WHERE Bloque.idBloque=' + limite;
@@ -45,11 +45,21 @@ router.get('/form', function(req, res, next) {
 
 /* GET Bloque form uno. */
 router.get('/ver/:idBloque', function(req, res, next) {
-  res.render('index', {
-    title: "StarkMap, B " + req.params.idBloque,
-    idBloque: req.params.idBloque,
-    ruta: "/bloques/json/" + req.params.idBloque
-  });
+	var idBloque = req.params.idBloque;
+
+	if(Number.isInteger(Number.parseInt(idBloque))) { //Evitar que se haga una peticion con otra cosa diferente a un numero
+		console.log(idBloque);
+		return res.render('index', {
+	    title: "StarkMap, B " + idBloque,
+	    idBloque: idBloque,
+	    ruta: "/bloques/json/" + idBloque
+	  });
+	} else {
+		return res.render('index', {
+			title: 'StarkMap',
+			ruta: '/bloques/json/list'
+		});
+	}
 });
 
 module.exports = router;
