@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  div(ng-app="App")
+    div(ng-controller="ControllerBloque" ng-cloak)
+      br
+      center
+        form(action="#")
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" id="sample3" ng-model="search")
+            label(class="mdl-textfield__label" for="sample3") Buscar...
+                                      
+        div(ng-if="bloques.length > 0")  
+          table.mdl-data-table.mdl-js-data-table.mdl-data-table.mdl-shadow--2dp
+            thead
+              tr
+                th #
+                th.mdl-data-table__cell--non-numeric Descripcion
+                th # Bloque
+                th Latitud
+                th Longitud
+            tbody
+              tr(ng-repeat="bloque in bloques | orderBy: bloque.numbloque | filter:search")
+                td.mdl-data-table__cell {{$index + 1}}
+                td.mdl-data-table__cell--non-numeric {{bloque.descripcion}}
+                td {{bloque.numbloque}}
+                td {{bloque.posicion.x}}
+                td {{bloque.posicion.y}}
+                td
+                  a(href="/bloques/ver/{{bloque.idbloque}}") VER
+                      
+  script(src='/javascripts/controllers.js')

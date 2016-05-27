@@ -6,11 +6,14 @@ block content
   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
   
   script.
-    var coords = [];  
+    var coords = [];
     
-    $.get('http://starkmap-sigudla.rhcloud.com#{ruta}', {}, function(datos) {
+    var ruta = #{ruta};
+    console.log("Ruta: " + ruta);
+    
+    $.get('http://starkmap-sigudla.rhcloud.com/bloques', {}, function(datos) {
       var c = datos.layers;
-      console.log("Lay: " + JSON.stringify(c));
+      console.log("Lay: " + JSON.stringify(c));      
       for (let i = 0; i < c.length; i++) {
         coords.push({
           "lat": c[i].posicion.x,

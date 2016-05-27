@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  div(ng-app="App")
+    div(ng-controller="ControllerSede" ng-cloak)
+      br
+      center
+        form(action="#")
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" id="sample3" ng-model="search")
+            label(class="mdl-textfield__label" for="sample3") Buscar...
+        
+        div(ng-if="sedes.length > 0")                       
+          table.mdl-data-table.mdl-js-data-table.mdl-data-table.mdl-shadow--2dp
+            thead
+              tr
+                th.mdl-data-table__cell #
+                th.mdl-data-table__cell--non-numeric Sede
+                th.mdl-data-table__cell--non-numeric Latitud
+                th.mdl-data-table__cell--non-numeric Longitud
+            tbody
+              tr(ng-repeat="sede in sedes | filter:search | orderBy: sede.nombresede")
+                td.mdl-data-table__cell {{$index + 1}}
+                td.mdl-data-table__cell--non-numeric {{sede.nombresede}}
+                td.mdl-data-table__cell {{sede.posicion.x}}
+                td.mdl-data-table__cell {{sede.posicion.y}}
+                td.mdl-data-table__cell
+                  a(href="#") VER
+                
+  script(src='/javascripts/controllers.js')

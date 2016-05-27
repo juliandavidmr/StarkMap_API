@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  div(ng-app="App")
+    div(ng-controller="ControllerRecursoFisicos" ng-cloak)
+      br
+      center
+        form(action="#")
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" id="sample3" ng-model="search")
+            label(class="mdl-textfield__label" for="sample3") Buscar...
+        
+        div(ng-if="rfs.length > 0")
+          table.mdl-data-table.mdl-js-data-table.mdl-data-table.mdl-shadow--2dp
+            thead
+              tr
+                th #
+                th.mdl-data-table__cell--non-numeric Nombre
+                th.mdl-data-table__cell--non-numeric Descripcion
+                th.mdl-data-table__cell--non-numeric # Piso
+                th.mdl-data-table__cell--non-numeric # Bloque
+                th.mdl-data-table__cell--non-numeric Tipo
+                th.mdl-data-table__cell--non-numeric Latitud
+                th.mdl-data-table__cell--non-numeric Longitud
+            tbody
+              tr(ng-repeat="r in rfs | filter:search | orderBy: r.nombrerecurso")
+                td.mdl-data-table__cell--non-numeric {{$index + 1}}
+                td.mdl-data-table__cell--non-numeric {{r.nombrerecurso}}
+                td.mdl-data-table__cell--non-numeric {{r.descripcion}}
+                td.mdl-data-table__cell--non-numeric {{r.numpiso}}
+                td.mdl-data-table__cell--non-numeric {{r.numbloque}}
+                td.mdl-data-table__cell--non-numeric {{r.tiporecurso}}
+                td.mdl-data-table__cell--numeric {{r.posicion.x}}
+                td.mdl-data-table__cell--numeric {{r.posicion.y}}
+                td.mdl-data-table__cell--non-numeric
+                  a(href="#") VER
+                                          
+  script(src='/javascripts/controllers.js')

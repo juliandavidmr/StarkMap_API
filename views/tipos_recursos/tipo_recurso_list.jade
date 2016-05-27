@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  div(ng-app="App")
+    div(ng-controller="ControllerTipoRecursoFisicos" ng-cloak)
+      br
+      center(ng-init="search=''")
+        form(action="#")
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" id="sample3" ng-model="search")
+            label(class="mdl-textfield__label" for="sample3") Buscar...
+        
+        div(ng-if="(trfs | filter:search).length == 0")
+          p(ng-if="search != ''").
+            No hay registros de tipos de recursos.
+            
+        div(ng-if="trfs.length > 0")                       
+          table.mdl-data-table.mdl-js-data-table.mdl-data-table.mdl-shadow--2dp
+            thead
+              tr
+                th.mdl-data-table__cell #
+                th.mdl-data-table__cell--non-numeric Tipo de recurso
+                th.mdl-data-table__cell--numeric Cantidad
+            tbody
+              tr(ng-repeat="r in trfs | filter:search" title="{{r.descripcion}}")
+                td.mdl-data-table__cell {{$index + 1}}
+                td.mdl-data-table__cell--non-numeric {{r.descripcion}}
+                td.mdl-data-table__cell--non-numeric 12
+                
+  script(src='/javascripts/controllers.js')
