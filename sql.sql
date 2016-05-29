@@ -172,6 +172,36 @@ INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBl
 INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
   VALUES('Salas Carlos Muñoz', '3105', 1, POINT(1.621086631938226, -75.60453252009239), 5, 1);
 
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Sala Caquetá', ' Sala', 1, POINT(1.621087982641954, -75.60468982903164), 5, 1);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Parqueadero auditorio', 'Parqueadero cerca al auditorio ang. Cuniberti', 1, POINT(1.61985571194881, -75.60412641614994), 10, 14);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Parqueadero entrada superior', 'Parqueadero cerca al bloque 7', 1, POINT(1.621680414937267, 75.60473229138736), 10, 14);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Parqueadero central', 'Parqueadero cerca al bloque 4', 1, POINT(1.62105031270933, -75.60508039759495), 10, 14);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Parqueadero principal', 'Parqueadero cerca a la entrada principal ', 1, POINT(1.620277222577338, -75.60490660655962), 10, 14);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Parqueadero de administracion', 'Parqueadero cerca al bloque Administrativo', 1, POINT(1.620517722613766, -75.60494747016942), 10, 14);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Biblioteca principal', ' ', 1, POINT(1.620380986065444, -75.60440174569278), 10, 5);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Papeleria1', ' Fotocopiadora', 1, POINT(1.620805491981484, -75.60510802104386), 10, 13);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Fotocopiadora la manigua', ' ', 1, POINT(1.620874744478496, -75.60466716772481), 4, 13);
+
+INSERT INTO RecursoFisico(NombreRecurso, Descripcion, NumPiso, Posicion, fk_idBloque, fk_idTipoRecursoFisico)
+  VALUES('Fotocopiadora Alpha & Omega', ' ', 1, POINT(1.620877063587888, -75.60470038209509), 4, 13);
+
 
 UPDATE RecursoFisico
   SET Posicion = POINT(1.620621619131929, -75.604213448635)
@@ -187,25 +217,9 @@ SELECT rf.*, b.NumBloque, tr.Descripcion as tiporecurso FROM RecursoFisico AS rf
 Cafeteria3	-75.60460957000623	1.620875384053739	0
 Cafeteria4	-75.60482523566277	1.620880161854013	0
 
-SalaCarlosMuñoz	-75.60453252009239	1.621086631938226	0
-SalaCaqueta	-75.60468982903164	1.621087982641954	0
+/*
 SalaPutumayo	-75.60432918330228	1.620864925699321	0
-ParqueaderoAuditorio	-75.60412641614994	1.61985571194881	0
-ParqueaderoEntradaSuperior	-75.60473229138736	1.621680414937267	0
-ParqueaderoBloque4	-75.60508039759495	1.62105031270933	0
-ParqueaderoEntradaPrincipal	-75.60490660655962	1.620277222577338	0
-ParqueaderoBloqueAdministrativo	-75.60494747016942	1.620517722613766	0
-Biblioteca	-75.60440174569278	1.620380986065444	0
-Bloque Administrativo	-75.60505897844571	1.620682257694531	0
-Bloque1	-75.60431944522745	1.620660522433779	0
-Bloque2	-75.60418749797302	1.620859225530586	0
-Bloque3	-75.60443693708122	1.621074838409086	0
-Bloque4	-75.6049955438862	1.621186516464349	0
-Bloque5	-75.60450203645094	1.621277611681631	0
-Bloque6	-75.6049853445246	1.621390252262274	0
-Bloque7	-75.60449702816996	1.621441994503853	0
-Papeleria1	-75.60510802104386	1.620805491981484	0
-FotocopiadoraManigua	-75.60466716772481	1.620874744478496	0
+
 FotocopiadoraAlphaOmega	-75.60470038209509	1.620877063587888	0
 Papeleria2	-75.60469054124763	1.620728852667417	0
 BañosBloque1	-75.60437986075638	1.620697341703314	0
@@ -224,9 +238,7 @@ OficinaEmprendimiento	-75.60424605549672	1.620553872687437	0
 OficinaIdiomas	-75.60419382692807	1.6205829557429	0
 OficinaBienestarUniversitario	-75.60435442063465	1.619760394201772	0
 ZonaMedica	-75.60442254341783	1.619573896315772	0
-
-
-
+*/
 
 
 -- -----------------------------------------------------
@@ -237,4 +249,17 @@ CREATE TABLE PuntosInteres (
   Descripcion VARCHAR(45) NULL,
   Longitud FLOAT NULL,
   Latitud FLOAT NULL,
-  PRIMARY KEY (idPuntosInteres))
+  PRIMARY KEY (idPuntosInteres)
+);
+
+
+-- -----------------------------------------------------------------------------
+-- View Traer tipos de recursos fisicos y la cantidad de rf que tiene cada uno
+-- -----------------------------------------------------------------------------
+CREATE OR REPLACE VIEW tiporecursofisico_cantidad
+  AS SELECT tr.descripcion, count(rf.fk_idbloque) AS cantidad
+    FROM tiporecursofisico as tr
+      INNER JOIN recursofisico AS rf
+      ON rf.fk_idtiporecursofisico = tr.idTipoRecursoFisico
+    GROUP BY tr.descripcion
+    ORDER BY tr.descripcion ASC;

@@ -11,6 +11,13 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+/* GET home page. */
+router.get('/acercade', function(req, res, next) {
+	res.render('acercade/acercade', {
+		title: 'Acerca de'		
+	});
+});
+
 /**
  * =============================================================================
  * 																	SEDES
@@ -80,7 +87,7 @@ router.get('/recursos_fisicos_form', function(req, res, next) {
  */
 /* GET TipoRecursoFisico json. */
 router.get('/trf', function(req, res, next) {
-	var query = client.query("SELECT * FROM TipoRecursoFisico;");
+	var query = client.query("SELECT * FROM tiporecursofisico_cantidad;");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});

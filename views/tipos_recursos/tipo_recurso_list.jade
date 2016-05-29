@@ -25,6 +25,6 @@ block content
               tr(ng-repeat="r in trfs | filter:search" title="{{r.descripcion}}")
                 td.mdl-data-table__cell {{$index + 1}}
                 td.mdl-data-table__cell--non-numeric {{r.descripcion}}
-                td.mdl-data-table__cell--non-numeric 12
+                td.mdl-data-table__cell--non-numeric {{r.cantidad}}
                 
   script(src='/javascripts/controllers.js')
